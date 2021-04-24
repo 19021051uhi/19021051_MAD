@@ -18,7 +18,9 @@ export class RoomsService {
 
   private rooms: Observable<Room[]>;
   private roomsCollection: AngularFirestoreCollection<Room>;
-  constructor(private af: AngularFirestore) {
+  constructor(
+    private af: AngularFirestore
+    ) {
 
     this.roomsCollection = this.af.collection<Room>('room');
     this.rooms = this.roomsCollection.snapshotChanges().pipe(
@@ -34,16 +36,16 @@ export class RoomsService {
    }
 
    getRooms(): Observable<Room[]>{
-
     return this.rooms;
-
    }
 
    getRoom(): Observable<Room>{
     return this.roomsCollection.doc<Room>().valueChanges().pipe(
       map(room =>{
+          console.log("--->" + room)
           return room;
       })
     )
+
    }
 }

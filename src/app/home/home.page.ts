@@ -38,12 +38,9 @@ export class HomePage {
 
     }
 
-
-      // let refresh = this.route.snapshot.paramMap.get('refreshs');
-      // if(refresh == 'true'){
-      //   alert("true");
-      //   window.location.reload;
-      // }
+    ngOnInit() {
+      this.rooms = this.roomService.getRooms();
+    }
 
 
 }
