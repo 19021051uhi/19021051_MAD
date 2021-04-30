@@ -58,6 +58,10 @@ export class AppComponent {
     this.router.navigate(['register']);
   }
 
+  goSearch() {
+    this.router.navigate(['search']);
+  }
+
   logout() {
     Cookie.set('challegeuser', '');
     this.authService.SignOut();

@@ -32,12 +32,12 @@ const routes: Routes = [
     loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
   },
   {
-    path: 'verify',
-    loadChildren: () => import('./verify/verify.module').then( m => m.VerifyPageModule)
-  },
-  {
     path: 'room',
     loadChildren: () => import('./room/room.module').then( m => m.RoomPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
   },
 ];
 

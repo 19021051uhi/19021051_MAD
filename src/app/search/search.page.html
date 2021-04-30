@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img class="logo" src="../../assets/icon/logo.png">
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar
+    class="searchbar"
+    #searchvalue
+    searchIcon="search"
+    animated
+    cancel-button-icon
+    (search)="searchUser(searchvalue)"
+    placeholder="Search a username">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="main">
+        <ion-list>
+          <ion-menu-toggle autoHide="false" *ngFor="let user of ( users | async )">
+            <ion-item>
+              <a item-right (click)="goRoom(user.username)" class="btnroom">{{user.username}}</a>
+              <ion-icon name="arrow-forward" slot="end"></ion-icon>
+              <br>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </div>
+</ion-content>

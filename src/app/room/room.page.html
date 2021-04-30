@@ -1,1 +1,81 @@
-z
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img id="logo" src="../../assets/icon/logo.png">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content [fullscreen]="true">
+  <ng-container #content *ngIf="all | async; let all">
+
+    <span #content *ngFor="let chatList of all.chat; let j=index">
+      <span *ngFor="let  userList of all.user; let i=index">
+        <!-- <p>{{userList.username}} : {{chatList.message}} ===> {{chatList.dateposted | date: 'yyyy-MM-dd HH:mm:ss'}} -->
+
+          <div *ngIf="userList.email == myCookie">
+            <div *ngIf="chatList.userid == userList.id">
+              <div class="container darker">
+                <span *ngFor="let  mediaList of all.media; let k=index">
+                  <div class="divider">
+                    <div *ngIf="chatList.mediaid == mediaList.id">
+                      <img src={{mediaList.url}} alt="Image" class="image-center">
+                    </div>
+                    <div>
+                      <br>
+                      <p class="message_content">{{chatList.message}}</p>
+                      <br>
+                      <span><img src="../../assets/img/avatar.png" class="right"></span>
+                      <br>
+                      <span class="time-left">{{chatList.dateposted | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+                      <span class="time-right">{{userList.username}}</span>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+
+
+          <div *ngIf="userList.email != myCookie">
+            <div *ngIf="chatList.userid == userList.id">
+              <div class="container">
+                <span *ngFor="let  mediaList of all.media; let k=index">
+                  <div class="divider">
+                    <div *ngIf="chatList.mediaid == mediaList.id">
+                      <img src={{mediaList.url}} alt="Image" class="image-center">
+                    </div>
+                    <div>
+                      <br>
+                      <p class="message_content">{{chatList.message}}</p>
+                      <br>
+                      <span><img src="../../assets/img/avatar.png" class="left"></span>
+                      <br>
+                      <span class="time-right">{{chatList.dateposted | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+                      <span class="time-left">{{userList.username}}</span>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+
+
+        <br>
+      </span>
+    </span>
+  </ng-container>
+</ion-content>
+
+
+<div class="type_msg">
+  <div class="input_msg_write">
+    <form #contactForm="ngForm" (ngSubmit)="postMessage(contactForm.value)" >
+      <input type="text" class="write_msg" placeholder="Type a message" [(ngModel)]="myVal" name="myval1">
+      <button class="msg_send_btn" type="submit" >send</button>
+    </form>
+  </div>
+</div>

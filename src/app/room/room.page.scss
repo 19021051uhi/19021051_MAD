@@ -4,7 +4,6 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
   color: #b85e95 !important;
   transform: translateY(-50%);
 }
@@ -33,5 +32,149 @@ width: 100px;
 height: 50px;
 margin-top: 10px;
 margin-bottom: 10px;
+
+}
+
+
+/* Chat containers */
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  margin-right: 150px;
+  margin-left: 20px;
+  padding: 5px;
+  color: black;
+}
+
+/* Darker chat container */
+.darker {
+  clear: both;
+  border-color: #ccc;
+  background-color: #ddd;
+  margin-right: 20px;
+  margin-left: 150px;
+
+}
+
+/* Clear floats */
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style images */
+.image-center {
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  max-width: 200px;
+
+}
+/* Style images */
+.container img.left {
+  float: left;
+  max-width: 40px;
+  width: 100%;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+  float: right;
+  margin-left: 5px;
+  margin-right:0;
+  max-width: 40px;
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: rgb(0, 0, 0);
+  font-size: 10px;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: rgb(0, 0, 0);
+  font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.message_content{
+
+  margin-left: 20px;
+  position:relative;
+
+}
+
+
+
+
+.input_msg_write input {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  color: #000000;
+  font-size: 15px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.type_msg {
+  border-top: 1px solid
+#000000;position: relative;
+  background-color: white;
+
+}
+.msg_send_btn {
+  background: #05728f none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 10px;
+  height: 40px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 40px;
+}
+
+.write_msg{
+
+  margin-left: 10px;
+  color: black !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(0, 0, 0);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(0, 0, 0);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(0, 0, 0);
+}
+
+.toolbar{
+
+  height: 70px;
+  padding: 10px;
 
 }

@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="toolbar">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -14,7 +14,8 @@
         <ion-list>
           <ion-menu-toggle autoHide="false" *ngFor="let room of ( rooms | async )">
             <ion-item>
-              {{room.name}}
+              <a item-right (click)="goRoom(room.id)" class="btnroom">{{room.name}}</a>
+              <ion-icon name="arrow-forward" slot="end"></ion-icon>
               <br>
             </ion-item>
           </ion-menu-toggle>

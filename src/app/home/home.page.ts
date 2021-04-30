@@ -20,7 +20,8 @@ export class HomePage {
       id: '',
       admin: '',
       datecreated: '',
-      name: ''
+      name: '',
+      type:''
   };
 
   constructor(
@@ -39,8 +40,16 @@ export class HomePage {
     }
 
     ngOnInit() {
-      this.rooms = this.roomService.getRooms();
+      this.rooms = this.roomService.getRoom();
+
+      // setTimeout(() => {
+      //   this.rooms = this.roomService.getRooms();
+      // }, 1500);
+
     }
 
+    goRoom(id: string){
+      this.router.navigate(['room', {roomid: id}]);
 
+    }
 }

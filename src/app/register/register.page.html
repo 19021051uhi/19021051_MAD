@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="toolbar">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -11,7 +11,7 @@
   <form>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" #email required></ion-input>
+      <ion-input type="email" #email required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
@@ -19,9 +19,28 @@
       <ion-input type="password" #password required></ion-input>
     </ion-item>
 
+
+    <ion-item lines="full">
+      <ion-label position="floating">dob</ion-label>
+      <ion-input type="Date" #dob required></ion-input>
+    </ion-item>
+
+
+    <ion-item lines="full">
+      <ion-label position="floating">Discipline</ion-label>
+      <ion-input type="text" #discipline required></ion-input>
+    </ion-item>
+
+
+    <ion-item lines="full">
+      <ion-label position="floating">username</ion-label>
+      <ion-input type="text" #username required></ion-input>
+    </ion-item>
+
+
     <ion-row>
       <ion-col>
-      <ion-button type="submit" (click)="signUp(email, password)" expand="block">Register</ion-button>
+      <ion-button type="submit" (click)="preSignup(email, password, dob, discipline, username)" expand="block">Register</ion-button>
       </ion-col>
     </ion-row>
   </form>
